@@ -135,16 +135,6 @@ header label{
 .home form{
     width: 100%;
     max-width: 500px;
-    animation: float 3s linear infinite;
-}
-
-@keyframes float{
-    0%, 100%{
-        transform: translateY(0rem);
-    }
-    50%{
-        transform: translateY(-3.5rem);
-    }
 }
 
 .home .content h3{
