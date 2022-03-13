@@ -34,7 +34,7 @@ body{
     background:#f9f9f9;
 }
 
-h1, h2, h3, p {
+h2, h3, p {
     line-height: 1.5;
 }
 
@@ -69,6 +69,7 @@ section{
 
 .btn:hover{
     transform: scale(1.1);
+    color:var(--primary-yellow);
 }
 
 .heading{
@@ -147,16 +148,18 @@ section#home.home form input.btn,
 .home form{
     width: 100%;
     max-width: 500px;
+    margin: auto 0 auto auto;
 }
 
 .home div.content {
-    margin-right: 2rem;
+    margin: auto 2rem auto 0;
 } 
 
 .home .content h1{
     font-size: 5.5rem;
     color:var(--secondary-heading-color);
     text-transform: uppercase;
+    line-height: 1;
 }
 
 .home .content h1 span{
@@ -171,22 +174,36 @@ section#home.home form input.btn,
 }
 
 section#home.home {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 10rem;
+    padding-bottom: 3rem;
 }
 
-.features .box-container{
+.parallax {
+    width: 100%;
+    /* The image used */
+    background-image: url(images/cover-medium.jpg);
+    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
+    /* Set a specific height */
+    min-height: 500px;
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coaching .box-container{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.features .box-container .box{
+.coaching .box-container .box{
     display: flex;
     flex-direction: column;
     flex:1 1 30rem;
-    justify-content: space-between;
-   
+    justify-content: flex-start;
     background:var(--white);
     border-radius: .5rem;
     border:.1rem solid rgba(0,0,0,.2);
@@ -198,26 +215,26 @@ section#home.home {
     transition: .2s linear;
 }
 
-.features .box-container .box img {
+.coaching .box-container .box img {
     width: fit-content;
     height: 13rem;
     margin: 0 auto;
 }
 
-.features .box-container .box h3 {
+.coaching .box-container .box h3 {
     font-size: 2rem;
     color: var(--secondary-heading-color);
     padding-top: 1rem;
 }
 
-.features .box-container .box p {
+.coaching .box-container .box p {
     font-size: var(--basic-font-size);
     color:var(--basic-font-color);
     padding: 1rem 0;
     margin: 1rem 0;
     text-align: left;
 }
-.features .box-container .box a.btn {
+.coaching .box-container .box a.btn {
     margin: 10px auto;
 }
 
@@ -262,6 +279,10 @@ section#home.home {
     font-size: var(--basic-font-size);
     color:var(--basic-font-color);
     padding:1rem 0;
+}
+
+.about .column .content p:first-child{
+    padding-top: 0;
 }
 
 .about .column .content .buttons a.btn {
@@ -389,7 +410,7 @@ section#home.home {
     display: flex;
     flex-direction: column;
     flex: 1 1 27rem;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 1rem;
     padding: 2rem;
     box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
@@ -402,7 +423,7 @@ section#home.home {
 .pricing .box-container .box:hover,
 .review .box-container .box:hover,
 .home form:hover,
-.features .box-container .box:hover {
+.coaching .box-container .box:hover {
     border: 1px solid var(--primary-mint);
 }
 
@@ -464,9 +485,8 @@ section#home.home {
     border:.1rem solid rgba(0,0,0,.2);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     border-radius: .5rem;
-    background:var(--white);
+    background: linear-gradient(110deg, #fdcd3b 60%, var(--primary-yellow) 60%);
     animation: none;
-    margin: 0 0 0 auto;
 }
 
 .home form .heading{
@@ -474,6 +494,7 @@ section#home.home {
     padding:0;
     padding-bottom: 2rem;
     margin: 0;
+    color: var(--black);
 }
 
 .home form .inputBox{
@@ -504,13 +525,17 @@ section#home.home {
     transition: .2s linear;
 }
 
+section#home.home form input.btn {
+    background-color: var(--black);
+}
+
 .home form .inputBox input:focus ~ label,
 .home form .inputBox input:valid ~ label,
 .home form .inputBox textarea:focus ~ label,
 .home form .inputBox textarea:valid ~ label{
     top:-.5rem;
     font-size: var(--basic-font-size);
-    color: var(--primary-mint);
+    color: var(--black);
 }
 
 .footer{
@@ -561,6 +586,8 @@ section#home.home {
 
 .footer .box-container .box a:hover{
     text-decoration: underline;
+    color:  var(--primary-yellow);
+    
 }
 
 .footer .box-container .box .info{
@@ -568,7 +595,7 @@ section#home.home {
     align-items: center;
 }
 
-.footer .box-container .box .info i{
+.footer .box-container .box .info i {
     margin:.5rem 0;
     margin-right: 1rem;
     border-radius: 50%;
@@ -579,6 +606,10 @@ section#home.home {
     width:4.5rem;
     line-height: 4.5rem;
     text-align: center;
+}
+
+.footer .box-container .box .info i:hover {
+    color:  var(--primary-yellow);
 }
 
 .footer .credit{
@@ -602,9 +633,9 @@ section#home.home {
 
 }
 
-@media (max-width:850px){
+@media (max-width:950px){
     .home .content h1 {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
 }
 
@@ -615,6 +646,19 @@ section#home.home {
 }
 
 @media (max-width:768px){
+    .parallax {
+        /* The image used */
+        background-image: url(images/cover-small.jpg);
+      
+        /* Set a specific height */
+        min-height: 500px;
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     section#home.home div.content a.btn,
     .about .column .content .buttons a.btn {   
         margin-right: 3rem;
@@ -656,7 +700,6 @@ section#home.home {
     }
 
     section#home.home {
-        padding-top: 6rem;
         padding-bottom: 3rem;
     }
 
@@ -675,6 +718,7 @@ section#home.home {
     }
 
     .home div.content {
+        grid-row: 2;
         margin-right: 0;
     }
 
@@ -682,6 +726,7 @@ section#home.home {
         font-size: 3.6rem;
     }
     .home form {
+        grid-row: 1;
         width: 100%;
         max-width: 100%;
     }
@@ -719,7 +764,7 @@ section#home.home {
     .home form {
         max-width: 100%;
     } 
-    .features .box-container .box,
+    .coaching .box-container .box,
     .review .box-container .box,
     .pricing .box-container .box
      {
