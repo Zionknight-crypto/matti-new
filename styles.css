@@ -32,6 +32,9 @@ html{
 
 body{
     background:#f9f9f9;
+    background-image: url(images/wave.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 h2, h3, p {
@@ -69,7 +72,6 @@ section{
 
 .btn:hover{
     transform: scale(1.1);
-    color:var(--primary-yellow);
 }
 
 .heading{
@@ -131,7 +133,6 @@ header label{
 
 .home{
     width: 100%;
-    min-height: 100vh;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
@@ -139,6 +140,7 @@ header label{
     align-items: center;
     justify-content: center;
 }
+
 section#home.home div.content a.btn,
 section#home.home form input.btn,
 .about .column .content .buttons a.btn {
@@ -173,6 +175,13 @@ section#home.home form input.btn,
     padding:1rem 0;
 }
 
+/* .home .content .arrow {
+    font-size: 5rem;
+    color: var(--white);
+    background-color: var(--primary-mint);
+    padding: 1rem;
+} */
+
 section#home.home {
     padding-top: 10rem;
     padding-bottom: 3rem;
@@ -191,6 +200,11 @@ section#home.home {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.coaching div.content {
+    max-width: 768px;
+    margin: 0 auto 2rem;
 }
 
 .coaching .box-container{
@@ -227,7 +241,8 @@ section#home.home {
     padding-top: 1rem;
 }
 
-.coaching .box-container .box p {
+.coaching .box-container .box p,
+.coaching div.content p {
     font-size: var(--basic-font-size);
     color:var(--basic-font-color);
     padding: 1rem 0;
@@ -485,7 +500,7 @@ section#home.home {
     border:.1rem solid rgba(0,0,0,.2);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
     border-radius: .5rem;
-    background: linear-gradient(110deg, #fdcd3b 60%, var(--primary-yellow) 60%);
+    background: var(--white);
     animation: none;
 }
 
@@ -494,7 +509,7 @@ section#home.home {
     padding:0;
     padding-bottom: 2rem;
     margin: 0;
-    color: var(--black);
+    color: var(--primary-mint);
 }
 
 .home form .inputBox{
@@ -526,7 +541,7 @@ section#home.home {
 }
 
 section#home.home form input.btn {
-    background-color: var(--black);
+    background-color: var(--primary-mint);
 }
 
 .home form .inputBox input:focus ~ label,
@@ -535,7 +550,7 @@ section#home.home form input.btn {
 .home form .inputBox textarea:valid ~ label{
     top:-.5rem;
     font-size: var(--basic-font-size);
-    color: var(--black);
+    color: var(--primary-mint);
 }
 
 .footer{
@@ -646,19 +661,11 @@ section#home.home form input.btn {
 }
 
 @media (max-width:768px){
-    .parallax {
-        /* The image used */
-        background-image: url(images/cover-small.jpg);
-      
-        /* Set a specific height */
-        min-height: 500px;
-      
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: right;
-        background-repeat: no-repeat;
-        background-size: cover;
+    body{
+        background:#f9f9f9;
+        background-image: none;
     }
+
     section#home.home div.content a.btn,
     .about .column .content .buttons a.btn {   
         margin-right: 3rem;
@@ -708,6 +715,9 @@ section#home.home form input.btn {
         grid-template-columns: auto;
         gap: 0;
         justify-items: center;
+        background-image: url(images/wave.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 
     .home .content,
@@ -718,7 +728,6 @@ section#home.home form input.btn {
     }
 
     .home div.content {
-        grid-row: 2;
         margin-right: 0;
     }
 
@@ -726,7 +735,6 @@ section#home.home form input.btn {
         font-size: 3.6rem;
     }
     .home form {
-        grid-row: 1;
         width: 100%;
         max-width: 100%;
     }

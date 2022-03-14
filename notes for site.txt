@@ -1,0 +1,13 @@
+Large corner yellow design for color balance.
+
+Move header paragraphs to coaching section to make it more juicy.
+
+Expand h1 text across view in large, with large cta text and green arrow to contact form.
+
+Contact form in white/ green neutral colors 
+
+remove parallax effect for now and search for something yellow later to stretch across view.
+
+No yellow in btn color hover state.
+
+Between coaching and about, make a banner for Podcast coming in May 2022.
