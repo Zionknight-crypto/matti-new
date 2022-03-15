@@ -9,10 +9,14 @@
     --secondary-heading-color: #333;
     --black: #000;
     --basic-font-size: 1.6rem;
+    --section-heading-font: Raleway,sans-serif,serif;
+    --main-heading-font: 'Bebas Neue', cursive;
+    --text-font: Roboto,sans-serif,serif;
+    --backup-font: 'Poppins', sans-serif;
 }
 
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--text-font);
     margin:0; padding:0;
     box-sizing: border-box;
     text-decoration: none;
@@ -39,6 +43,10 @@ body{
 
 h2, h3, p {
     line-height: 1.5;
+}
+
+h2, h3, h4, h5 {
+    font-family: var(--section-heading-font);
 }
 
 .site-wrapper {
@@ -104,9 +112,10 @@ header{
     justify-content: space-between;
 }
 
-header .logo{
-    font-size: 2rem;
-    color: var(--black);
+header .logo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
 }
 
 header .navbar a{
@@ -150,18 +159,19 @@ section#home.home form input.btn,
 .home form{
     width: 100%;
     max-width: 500px;
-    margin: auto 0 auto auto;
+    margin: auto 15px auto auto;
 }
 
 .home div.content {
-    margin: auto 2rem auto 0;
+    margin: auto 2rem auto 15px;;
 } 
 
 .home .content h1{
     font-size: 5.5rem;
     color:var(--secondary-heading-color);
     text-transform: uppercase;
-    line-height: 1;
+    line-height: 1.25;
+    margin: 15px auto;
 }
 
 .home .content h1 span{
@@ -204,7 +214,7 @@ section#home.home {
 
 .coaching div.content {
     max-width: 768px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
 }
 
 .coaching .box-container{
@@ -249,8 +259,19 @@ section#home.home {
     margin: 1rem 0;
     text-align: left;
 }
-.coaching .box-container .box a.btn {
-    margin: 10px auto;
+.coaching .box-container .box p.number {
+    width: 50px;
+    height: 50px;
+    padding: 2rem;
+    background-color: var(--primary-mint);
+    color: var(--white);
+    line-height: 0.75;
+    font-weight: 600;
+    margin: 0 auto 0 0;
+    border-radius: 50%;
+    position: relative;
+    left: -10px;
+    top: -20px;
 }
 
 .about .column{
@@ -260,7 +281,8 @@ section#home.home {
     gap: 2rem;
     align-items: start;
     justify-content: center;
-   
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .about .column .image{
@@ -412,6 +434,8 @@ section#home.home {
 .review .box-container .box .comment{
     color:var(--basic-font-color);
     font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: left;
     padding:1rem;
 }
 
@@ -466,6 +490,7 @@ section#home.home {
 
 .pricing .box-container .box ul li{
     font-size: var(--basic-font-size);
+    line-height: 1.5;
     color:var(--basic-font-color);
     padding:.5rem 0;
 }
@@ -600,9 +625,7 @@ section#home.home form input.btn {
 }
 
 .footer .box-container .box a:hover{
-    text-decoration: underline;
-    color:  var(--primary-yellow);
-    
+    text-decoration: underline;    
 }
 
 .footer .box-container .box .info{
@@ -621,10 +644,6 @@ section#home.home form input.btn {
     width:4.5rem;
     line-height: 4.5rem;
     text-align: center;
-}
-
-.footer .box-container .box .info i:hover {
-    color:  var(--primary-yellow);
 }
 
 .footer .credit{
@@ -651,6 +670,12 @@ section#home.home form input.btn {
 @media (max-width:950px){
     .home .content h1 {
         font-size: 4.5rem;
+    }
+}
+
+@media (max-width:850px){
+    .coaching div.content  {
+        margin: 15px;
     }
 }
 
@@ -772,11 +797,18 @@ section#home.home form input.btn {
     .home form {
         max-width: 100%;
     } 
+    .coaching div.content  {
+        margin: 0 auto;
+    }
     .coaching .box-container .box,
     .review .box-container .box,
     .pricing .box-container .box
      {
         margin: 1rem 0;
+    }
+    .about .column {
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
