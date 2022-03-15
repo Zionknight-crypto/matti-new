@@ -142,12 +142,14 @@ header label{
 
 .home{
     width: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     align-items: center;
     justify-content: center;
+    padding: 10rem 35px 3rem;
 }
 
 .home div.content .cta-top {
@@ -205,32 +207,6 @@ section#home.home form input.btn,
     padding:1rem 0;
 }
 
-/* .home .content .arrow {
-    font-size: 5rem;
-    color: var(--white);
-    background-color: var(--primary-mint);
-    padding: 1rem;
-} */
-
-section#home.home {
-    padding: 10rem 35px 3rem;
-}
-
-.parallax {
-    width: 100%;
-    /* The image used */
-    background-image: url(images/cover-medium.jpg);
-    clip-path: polygon(0 20%, 100% 0%, 100% 80%, 0% 100%);
-    /* Set a specific height */
-    min-height: 500px;
-  
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .coaching div.content {
     max-width: 768px;
     margin: 0 auto 3rem;
@@ -264,14 +240,16 @@ section#home.home {
     margin: 0 auto;
 }
 
-.coaching .box-container .box h3 {
+.coaching .box-container .box h3,
+section.podcast div.box h3 {
     font-size: 2rem;
     color: var(--secondary-heading-color);
     padding-top: 1rem;
 }
 
 .coaching .box-container .box p,
-.coaching div.content p {
+.coaching div.content p,
+section.podcast div.box p {
     font-size: var(--basic-font-size);
     color:var(--basic-font-color);
     padding: 1rem 0;
@@ -293,6 +271,41 @@ section#home.home {
     width: 4.5rem;
     line-height: 2.5rem;
     text-align: center;
+}
+
+section.podcast div.box {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 30rem;
+    justify-content: flex-start;
+    background: var(--white);
+    border-radius: 0.5rem;
+    border: 0.1rem solid rgba(0,0,0,.2);
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+    margin: 1.5rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: .2s linear;
+}
+
+section.podcast div.box img {
+    width: fit-content;
+    height: 20rem;
+    margin: 0 0 0 auto;
+}
+
+section.podcast div.box .podcast-text {
+    margin: 20px auto;
+}
+section.podcast div.box .podcast-text h3 {
+    font-size: 3rem;
+}
+section.podcast div.box img:first-child {
+    margin: 0 auto 0 0;
+}
+
+section.podcast div.box p {
+    text-align: center !important;
 }
 
 .about .column{
@@ -752,10 +765,6 @@ section#home.home form input.btn {
         content:'\f00d';
     }
 
-    section#home.home {
-        padding-bottom: 3rem;
-    }
-
     .home{
         grid-template-rows: auto auto;
         grid-template-columns: auto;
@@ -764,6 +773,7 @@ section#home.home form input.btn {
         background-image: url(images/wave.svg);
         background-size: cover;
         background-repeat: no-repeat;
+        padding: 5rem 20px 3rem !important;
     }
 
     .home i.fas.fa-arrow-right {
@@ -825,9 +835,6 @@ section#home.home form input.btn {
         padding-right: 20px;
         padding-left: 20px;
     }
-    section#home.home {
-        padding: 10rem 20px 3rem;
-    }
     .home .content,
     .about .column .content,
     .home form {
@@ -845,6 +852,14 @@ section#home.home form input.btn {
     .about .column {
         padding-left: 0;
         padding-right: 0;
+    }
+    section.podcast div.box {
+        margin: auto;
+    }
+    section.podcast div.box img,
+    section.podcast div.box img:first-child {
+        height: 12rem;
+        margin: 0 auto;
     }
 }
 
